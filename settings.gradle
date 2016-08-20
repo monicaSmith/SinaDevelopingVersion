@@ -1,0 +1,3 @@
+include ':app', ':java_lib'
+include ':weiboSDK'
+include ':weiboSDK'
