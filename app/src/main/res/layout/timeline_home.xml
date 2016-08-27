@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_marginRight="20dp"
-    android:layout_marginLeft="20dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     //pic
@@ -18,7 +16,7 @@
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/user_pic"
         android:text="name"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:textColor="#f00"
         android:id="@+id/user_name_home"
         android:layout_height="wrap_content"
@@ -54,66 +52,79 @@
         android:text="weibo_text"
         android:layout_below="@+id/user_pic"
         />
-    //reposts
-    <ImageView
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="10dp"
-        android:layout_height="20dp"
-        android:layout_width="20dp"
-        android:src="@drawable/a"
-        android:layout_below="@+id/weibo_text"
-        android:id="@+id/reposts_pic"
-        />
-    <TextView
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="Reposts"
-        android:layout_toRightOf="@+id/reposts_pic"
-        android:id="@+id/reposts"
+    <LinearLayout
         android:layout_below="@id/weibo_text"
-        android:layout_height="20dp"
-        android:layout_width="wrap_content"
-        />
-    //comments
-    <ImageView
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="15dp"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:id="@+id/comments_pic"
-        android:src="@drawable/b"
-        android:layout_below="@+id/weibo_text"
-        android:layout_toRightOf="@+id/reposts"/>
-    <TextView
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@+id/comments_pic"
-        android:id="@+id/comments_text"
-        android:layout_height="20dp"
-        android:layout_width="wrap_content"
-        android:text="Comments"
-        android:layout_below="@+id/weibo_text"
-        />
-    //likes
-    <ImageView
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:id="@+id/likes_pc"
-        android:src="@drawable/c"
-        android:layout_below="@+id/weibo_text"
-        android:layout_toRightOf="@+id/comments_text"
-        />
-    <TextView
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@+id/likes_pc"
-        android:id="@+id/likes_text"
-        android:layout_height="20dp"
-        android:layout_width="wrap_content"
-        android:text="likes_number"
-        android:layout_below="@+id/weibo_text"
-        />
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content">
+            //reposts
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_height="20dp"
+                android:layout_width="20dp"
+                android:src="@drawable/forward"
+                android:id="@+id/reposts_pic"
+                />
+            <TextView
+                android:layout_marginTop="10dp"
+                android:text="Reposts"
+                android:id="@+id/reposts"
+                android:layout_height="20dp"
+                android:layout_width="wrap_content"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_below="@id/weibo_text"
+            android:layout_centerInParent="true"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content">
+
+            //comments
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/comments_pic"
+                android:src="@drawable/comments1"/>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/comments_text"
+                android:layout_height="20dp"
+                android:layout_width="wrap_content"
+                android:text="Comments"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_below="@id/weibo_text"
+            android:orientation="horizontal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            //likes
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/likes_pc"
+                android:src="@drawable/likes"
+                />
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/likes_text"
+                android:layout_height="20dp"
+                android:layout_width="wrap_content"
+                android:text="likes_number"
+                />
+        </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>

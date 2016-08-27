@@ -1,3 +1,4 @@
-include ':app', ':java_lib'
+include ':app', ':java_lib', ':mylibrary'
 include ':weiboSDK'
 include ':weiboSDK'
+include ':library'

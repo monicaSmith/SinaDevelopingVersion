@@ -16,14 +16,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".TabhostActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WeiboUserInfo"></activity>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".WeiboUserInfo"/>
         <activity android:name=".SendWeibo"></activity>
         <activity android:name=".AccessTokenKeeper"></activity>
         <activity android:name=".HomelineActivity"/>

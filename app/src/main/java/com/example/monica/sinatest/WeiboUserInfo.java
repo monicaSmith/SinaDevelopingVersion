@@ -1,11 +1,9 @@
 package com.example.monica.sinatest;
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,8 +16,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.HashMap;
-
 /**
  * Created by monica on 8/10/16.
  */
@@ -45,17 +41,20 @@ public class WeiboUserInfo extends Activity{
         value_weibo=(TextView)findViewById(R.id.value_weibo);
         Button send_weibo,home_page;
         setUserInfo();
-        home_page=(Button)findViewById(R.id.home_page);
-        //set home_page
-        home_page.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(WeiboUserInfo.this,HomelineActivity.class));
-            }
-        });
+//        home_page=(Button)findViewById(R.id.home_page);
+//        //set home_page
+//        home_page.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(WeiboUserInfo.this,HomelineActivity.class));
+//            }
+//        });
     }
     public void setUserInfo(){
+        //why here i can AccessTokenKeeper.getKeyAccessToken()???????????????????????
         String url="https://api.weibo.com/2/users/show.json?access_token="+AccessTokenKeeper.getKeyAccessToken()+"&uid="+AccessTokenKeeper.getKeyUid();
+//String url="https://api.weibo.com/2/users/show.json?access_token="+"2.009R7bUFprlCCCd292ebe5d2uo8KnD"+"&uid="+"5032873402";
+       // print("weibo user info ::>>>token weibouser*********"+AccessTokenKeeper.getKeyAccessToken());
         try {
             Gson gson = new Gson();
             User_show userInfo=gson.fromJson(readUrl(url),User_show.class);
@@ -82,6 +81,36 @@ public class WeiboUserInfo extends Activity{
     }
 
     //get online picture
+//    public class GetImageBitmap extends AsyncTask<String,Void,Bitmap>{
+//        HomelineActivity.ViewHolder viewHolder;
+//        ImageView pic;
+//        public GetImageBitmap(HomelineActivity.ViewHolder viewHolder,ImageView pic){
+//            this.viewHolder=viewHolder;
+//            this.pic=pic;
+//        }
+//        public Bitmap doInBackground(String... urls){
+//            Bitmap bm=null;
+//            try {
+//                URL aURL = new URL(urls[0]);
+//                URLConnection conn = aURL.openConnection();
+//                conn.connect();
+//                InputStream is = conn.getInputStream();
+//                BufferedInputStream bis = new BufferedInputStream(is);
+//                bm = BitmapFactory.decodeStream(bis);
+//                bis.close();
+//                is.close();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            return bm;
+//        }
+//        public void onPostExecute(Bitmap bm){
+//            return
+//        }
+//
+//    }
+
+
     public static Bitmap getImageBitmap(String url) {
         Bitmap bm = null;
         try {

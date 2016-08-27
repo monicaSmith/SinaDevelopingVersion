@@ -134,16 +134,4 @@
         android:layout_below="@id/weibo_level_text"
         android:id="@+id/likes_text"
         android:text="Likes"/>
-    <Button
-        android:id="@+id/home_page"
-        android:layout_below="@+id/likes_text"
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:text="home_page"/>
-    <Button
-        android:layout_below="@+id/home_page"
-        android:id="@+id/send_weibo"
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:text="send_weibo"/>
 </RelativeLayout>
